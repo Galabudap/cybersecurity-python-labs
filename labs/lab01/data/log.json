@@ -1,0 +1,24 @@
+[
+    {
+        "event": "login",
+        "user": "admin_ivanov",
+        "result": "success",
+        "timestamp": "2026-09-24 01:17:19",
+        "args": [
+            "admin_ivanov",
+            "SecurePass2024!Strong"
+        ],
+        "kwargs": {}
+    },
+    {
+        "event": "login",
+        "user": "admin_ivanov",
+        "result": "failure",
+        "timestamp": "2026-09-24 01:17:19",
+        "args": [
+            "admin_ivanov",
+            "WrongPassword12345"
+        ],
+        "kwargs": {}
+    }
+]
