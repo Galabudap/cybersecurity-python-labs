@@ -1,6 +1,6 @@
 """Головний файл для демонстрації роботи."""
 
-from shared.student import STUDENT_NAME, GROUP_NAME, VARIANT_NUMBER
+from shared.student import GROUP_NAME, STUDENT_NAME, VARIANT_NUMBER
 
 print(STUDENT_NAME)
 print(GROUP_NAME)
