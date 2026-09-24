@@ -59,11 +59,22 @@ def create_users(users_list):
     """Створює CSV-базу користувачів із логінами та хешами паролів."""
     os.makedirs(DATA_DIR, exist_ok=True)
 
-    with open(USERS_CSV_PATH, "w", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
-        for username, password in users_list:
-            row = create_user(username, password)
-            writer.writerow(row)
+    try:
+        with open(USERS_CSV_PATH, "w", newline="", encoding="utf-8") as file:
+            writer = csv.writer(file)
+            for username, password in users_list:
+                row = create_user(username, password)
+                writer.writerow(row)
+    except FileNotFoundError as error:
+        print("Файл не знайдено:", error)
+    except PermissionError as error:
+        print("Немає доступу до файлу:", error)
+    except OSError as error:
+        print("Помилка вводу-виводу:", error)
+    except ValidationError as error:
+        print("Помилка валідації:", error)
+    except ValueError as error:
+        print("Неправильне значення:", error)
 
 
 def read_users_db():
@@ -161,12 +172,6 @@ def main():
         result = login("admin_ivanov", "WrongPassword12345")
         print("Вхід admin_ivanov з неправильним паролем:", result)
 
-    except FileNotFoundError:
-        print("Файл не знайдено")
-    except PermissionError:
-        print("Немає доступу до файлу")
-    except OSError:
-        print("Помилка вводу-виводу")
     except ValidationError as error:
         print("Помилка валідації:", error)
     except ValueError as error:
