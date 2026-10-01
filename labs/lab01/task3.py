@@ -85,12 +85,13 @@ def read_users_db():
             reader = csv.reader(file)
             for row in reader:
                 users_db.append((row[0], row[1]))
-    except FileNotFoundError:
-        print("Файл бази користувачів не знайдено")
-    except PermissionError:
-        print("Немає доступу до файлу бази користувачів")
-    return users_db
-
+    except FileNotFoundError as error:
+        print("Файл бази користувачів не знайдено:", error)
+    except PermissionError as error:
+        print("Немає доступу до файлу бази користувачів:", error)
+    except OSError as error:
+        print("Помилка вводу-виводу:", error)
+    return 
 
 def print_users_db(users_db):
     """Виводить базу користувачів у вигляді таблиці."""
