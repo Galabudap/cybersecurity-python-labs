@@ -1,0 +1,12 @@
+﻿host,port,status,response_time_ms,notes
+127.0.0.1,22,TIMEOUT,1011.14,Connection timed out
+127.0.0.1,80,TIMEOUT,1004.27,Connection timed out
+localhost,443,TIMEOUT,2026.37,Connection timed out
+192.0.2.10,80,TIMEOUT,1010.92,Connection timed out
+198.51.100.20,443,TIMEOUT,1008.97,Connection timed out
+203.0.113.30,22,TIMEOUT,1006.9,Connection timed out
+service.example.invalid,8080,DNS_ERROR,29.68,Cannot resolve host name
+db.example.invalid,5432,DNS_ERROR,31.47,Cannot resolve host name
+bad host name,80,INVALID,,Некоректне доменне ім'я
+999.10.10.10,443,INVALID,,Частини IPv4 мають бути від 0 до 255
+api.example.invalid,70000,INVALID,,Порт має бути цілим числом від 1 до 65535
