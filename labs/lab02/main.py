@@ -1,6 +1,7 @@
 """Запуск лабораторної роботи №2."""
 
 import argparse
+import secrets
 from datetime import timedelta
 
 from labs.lab02.task1 import (
@@ -20,8 +21,6 @@ def run_demo():
     user = User("pavlo", "pavlo@example.com")
 
     # Випадковий навчальний пароль існує лише в пам'яті.
-    import secrets
-
     demo_password = secrets.token_urlsafe(24)
     user.set_password(demo_password)
     account = UserAccount(user)

@@ -188,6 +188,6 @@ def run_analysis(args):
         LOGGER.info("CSV saved to %s", args.out_csv)
         print("Audit log:", log_path)
         return 0
-    except (OSError, ValueError) as error:
+    except (OSError, ValueError, TypeError) as error:
         LOGGER.error("Analysis failed: %s", error)
         return 1
