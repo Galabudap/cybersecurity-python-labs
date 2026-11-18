@@ -7,8 +7,16 @@ from shared.student import GROUP_NAME, STUDENT_NAME, VARIANT_NUMBER
 SPECIAL_CHARACTERS = "!@#$%^&*()-_=+[]{};:,.<>?/"
 
 passwords = [
-    "DataS3cur3!", "123", "Crypt0@Analysis", "test123", "Quantum#2023",
-    "access", "Secur1ty@Pro", "password1", "Adv@nced123", "guest123",
+    "DataS3cur3!",
+    "123",
+    "Crypt0@Analysis",
+    "test123",
+    "Quantum#2023",
+    "access",
+    "Secur1ty@Pro",
+    "password1",
+    "Adv@nced123",
+    "guest123",
 ]
 
 criteria = {
@@ -19,7 +27,12 @@ criteria = {
 }
 
 forbidden_passwords = {
-    "123", "test123", "access", "password1", "guest123", "admin",
+    "123",
+    "test123",
+    "access",
+    "password1",
+    "guest123",
+    "admin",
 }
 
 

@@ -91,7 +91,8 @@ def read_users_db():
         print("Немає доступу до файлу бази користувачів:", error)
     except OSError as error:
         print("Помилка вводу-виводу:", error)
-    return 
+    return users_db
+
 
 def print_users_db(users_db):
     """Виводить базу користувачів у вигляді таблиці."""
@@ -122,7 +123,8 @@ def log_event(func):
         try:
             with open(LOG_JSON_PATH, "r", encoding="utf-8") as file:
                 logs = json.load(file)
-        except (FileNotFoundError, json.JSONDecodeError):
+        except (FileNotFoundError, json.JSONDecodeError) as error:
+            print("Журнал не знайдено або пошкоджено, створюю новий:", error)
             logs = []
 
         logs.append(entry)
